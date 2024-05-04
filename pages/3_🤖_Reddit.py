@@ -65,8 +65,8 @@ st.markdown("<br>", unsafe_allow_html=True)
 url = st.text_input("Enter the Post ID:")
 if url:
     try:
-        reddit = praw.Reddit(client_id='ITmu5TM2709pdIQyQkCXdg',
-                     client_secret='CO1dt3x63irPRqEnxcKKYzbK8d8TTQ',
+        reddit = praw.Reddit(client_id=env_vars["CLIENT_ID"],
+                     client_secret=env_vars["CLIENT_SECRET"],
                      user_agent=True)
         #url = "https://www.reddit.com/r/CricketShitpost/comments/1c6u56b/another_2_years_vacation_coming_soon/"
         post = reddit.submission(url=url)
